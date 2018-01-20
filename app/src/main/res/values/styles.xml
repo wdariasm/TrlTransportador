@@ -1,0 +1,66 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorTema</item>
+        <item name="colorPrimaryDark">@color/colorTemaDark</item>
+        <item name="colorAccent">@color/colorSecundario</item>
+
+    </style>
+
+    <style name="appThemeLogin" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorTema</item>
+        <item name="colorPrimaryDark">@color/colorTemaDark</item>
+        <item name="colorAccent">@color/colorSecundario</item>
+    </style>
+
+
+    <!-- COLORES -->
+    <color name="colorTema">#F36F23</color>
+    <color name="colorTemaDark">#c6520f</color>
+    <color name="colorTemaFocus">#faa26f</color>
+    <color name="colorSecundario">#337ab7</color>
+    <color name="colorSecundarioDark">#0e4b80</color>
+    <color name="colorSecundarioFocus">#65b2f4</color>
+    <color name="colorGrisOscuro">#E9E9E9</color>
+    <color name="colorGrisClaro">#F8F8F8</color>
+    <color name="colorVerde">#43A047</color>
+    <color name="colorVerdeFocus">#81C784</color>
+    <color name="colorVerdeDark">#1B5E20</color>
+    <color name="colorRojo">#F44336</color>
+    <color name="colorRojoFocus">#E57373</color>
+    <color name="colorRojoDark">#B71C1C</color>
+
+
+    <!-- FUENTE LETRAS -->
+    <string name="tipoLetra">sans-serif-light</string>
+    <string name="estiloLetra">bold</string>
+
+    <color name="colorLetraTitulo">#000000</color>
+    <color name="colorLetraSecundario">#545454</color>
+
+    <!-- tamano letra -->
+    <dimen name="tam1">12dp</dimen>
+    <dimen name="tam2">14dp</dimen>
+    <dimen name="tam3">16dp</dimen>
+    <dimen name="tam4">18dp</dimen>
+    <dimen name="tam5">20dp</dimen>
+    <dimen name="tam6">22dp</dimen>
+    <dimen name="tam7">24dp</dimen>
+    <dimen name="tam8">26dp</dimen>
+    <dimen name="tam9">28dp</dimen>
+    <dimen name="tam10">30dp</dimen>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" >
+    </style>
+
+</resources>

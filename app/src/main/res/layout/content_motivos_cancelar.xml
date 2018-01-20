@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="10sp"
+    android:background="#ffffff"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@string/tipoLetra"
+        android:textSize="@dimen/tam4"
+        android:textColor="#000000"
+        android:text="Seleccione Motivo de Cancelación"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:layout_marginTop="5sp"
+        android:background="@color/colorSecundario"
+        />
+
+    <ProgressBar
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/pb"
+        android:layout_width="match_parent"
+        android:layout_height="35sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginRight="5sp"
+        android:layout_alignParentRight="true"
+        />
+
+    <RadioGroup
+        android:layout_marginTop="5sp"
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    </RadioGroup>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:layout_marginTop="5sp"
+        android:background="@color/colorGrisOscuro"
+        />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/divBotones"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:textAllCaps="false"
+            android:layout_width="120sp"
+            android:layout_height="40sp"
+            android:text="Volver"
+            android:textColor="#ffffff"
+            android:layout_marginRight="5sp"
+            android:layout_marginTop="10sp"
+            android:background="@drawable/boton_negativo"
+            />
+
+        <Button
+            android:id="@+id/btnConfirmar"
+            android:textAllCaps="false"
+            android:layout_width="120sp"
+            android:layout_height="40sp"
+            android:text="Continuar"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="5sp"
+            android:layout_marginTop="10sp"
+            android:background="@drawable/boton_positivo"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

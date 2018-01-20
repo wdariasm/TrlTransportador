@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:fillViewport="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#7f000000"
+                android:clickable="true"
+                android:onClick="menuPrincipal"
+                >
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/div_servicios"
+                        android:clickable="true"
+                        android:onClick="irMenu"
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="5sp"
+                        android:paddingRight="5sp"
+                        android:paddingBottom="18sp"
+                        android:background="@drawable/fondo_menu"
+                        >
+
+                        <RelativeLayout
+                            android:layout_marginTop="20sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:src="@mipmap/servicios"
+                                android:layout_centerInParent="true"
+                                />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_marginTop="8sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Servicios"
+                            android:textSize="@dimen/tam4"
+                            android:fontFamily="@string/tipoLetra"
+                            android:textColor="#000000"
+                            android:gravity="center_horizontal"
+                            />
+
+                        <TextView
+                            android:visibility="gone"
+                            android:layout_marginTop="-5sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Lista de servicios"
+                            android:textSize="@dimen/tam2"
+                            android:fontFamily="@string/tipoLetra"
+                            android:gravity="center_horizontal"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/div_historial"
+                        android:clickable="true"
+                        android:onClick="irMenu"
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="5sp"
+                        android:paddingRight="5sp"
+                        android:paddingBottom="18sp"
+                        android:background="@drawable/fondo_menu"
+                        >
+
+                        <RelativeLayout
+                            android:layout_marginTop="20sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:src="@mipmap/historial"
+                                android:layout_centerInParent="true"
+                                />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_marginTop="8sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Historial"
+                            android:textSize="@dimen/tam4"
+                            android:fontFamily="@string/tipoLetra"
+                            android:textColor="#000000"
+                            android:gravity="center_horizontal"
+                            />
+
+                        <TextView
+                            android:visibility="gone"
+                            android:layout_marginTop="-5sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Servicios realizados"
+                            android:textSize="@dimen/tam4"
+                            android:fontFamily="@string/tipoLetra"
+                            android:gravity="center_horizontal"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/div_pagos"
+                        android:clickable="true"
+                        android:onClick="irMenu"
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="5sp"
+                        android:paddingRight="5sp"
+                        android:paddingBottom="18sp"
+                        android:background="@drawable/fondo_menu"
+                        >
+
+                        <RelativeLayout
+                            android:layout_marginTop="20sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:src="@mipmap/pagos"
+                                android:layout_centerInParent="true"
+                                />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_marginTop="8sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Pagos"
+                            android:textSize="@dimen/tam4"
+                            android:fontFamily="@string/tipoLetra"
+                            android:textColor="#000000"
+                            android:gravity="center_horizontal"
+                            />
+
+                        <TextView
+                            android:visibility="gone"
+                            android:layout_marginTop="-5sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Servicios realizados"
+                            android:textSize="@dimen/tam4"
+                            android:fontFamily="@string/tipoLetra"
+                            android:gravity="center_horizontal"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/div_ajustes"
+                        android:clickable="true"
+                        android:onClick="irMenu"
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="5sp"
+                        android:paddingRight="5sp"
+                        android:paddingBottom="18sp"
+                        android:background="@drawable/fondo_menu"
+                        >
+
+                        <RelativeLayout
+                            android:layout_marginTop="20sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:src="@mipmap/cog"
+                                android:layout_centerInParent="true"
+                                />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_marginTop="8sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Ajustes"
+                            android:textSize="@dimen/tam4"
+                            android:fontFamily="@string/tipoLetra"
+                            android:textColor="#000000"
+                            android:gravity="center_horizontal"
+                            />
+
+                        <TextView
+                            android:visibility="gone"
+                            android:layout_marginTop="-5sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Lista de servicios"
+                            android:textSize="@dimen/tam2"
+                            android:fontFamily="@string/tipoLetra"
+                            android:gravity="center_horizontal"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/div_salir"
+                        android:clickable="true"
+                        android:onClick="irMenu"
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="5sp"
+                        android:paddingRight="5sp"
+                        android:paddingBottom="18sp"
+                        android:background="@drawable/fondo_menu"
+                        >
+
+                        <RelativeLayout
+                            android:layout_marginTop="20sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:src="@mipmap/salir"
+                                android:layout_centerInParent="true"
+                                />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_marginTop="8sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Salir"
+                            android:textSize="@dimen/tam4"
+                            android:fontFamily="@string/tipoLetra"
+                            android:textColor="#000000"
+                            android:gravity="center_horizontal"
+                            />
+
+                        <TextView
+                            android:visibility="gone"
+                            android:layout_marginTop="-5sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Servicios realizados"
+                            android:textSize="@dimen/tam4"
+                            android:fontFamily="@string/tipoLetra"
+                            android:gravity="center_horizontal"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/div_otro"
+                        android:clickable="true"
+                        android:onClick="irMenu"
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="5sp"
+                        android:paddingRight="5sp"
+                        android:paddingBottom="18sp"
+                        android:background="@drawable/fondo_menu"
+                        >
+
+                        <RelativeLayout
+                            android:layout_marginTop="20sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:layout_centerInParent="true"
+                                />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_marginTop="8sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="@dimen/tam4"
+                            android:fontFamily="@string/tipoLetra"
+                            android:textColor="#000000"
+                            android:gravity="center_horizontal"
+                            />
+
+                        <TextView
+                            android:visibility="gone"
+                            android:layout_marginTop="-5sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Servicios realizados"
+                            android:textSize="@dimen/tam4"
+                            android:fontFamily="@string/tipoLetra"
+                            android:gravity="center_horizontal"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:background="@drawable/fondo_menu"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_margin="5sp"
+                        android:layout_width="30sp"
+                        android:layout_height="30sp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/user_circle_login"
+                        />
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/lblConductor"
+                            android:layout_marginTop="5sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nombre del conductor"
+                            android:textSize="@dimen/tam2"
+                            android:fontFamily="@string/tipoLetra"
+                            android:layout_marginLeft="5sp"
+                            android:textColor="#000000"
+                            android:gravity="center_horizontal"
+                            />
+
+                        <TextView
+                            android:id="@+id/lblPlaca"
+                            android:layout_marginLeft="5sp"
+                            android:layout_marginTop="-2sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="placa"
+                            android:textSize="@dimen/tam2"
+                            android:fontFamily="@string/tipoLetra"
+                            android:layout_marginBottom="8sp"
+                            android:textColor="#000000"
+                            android:gravity="center_horizontal"
+                            />
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

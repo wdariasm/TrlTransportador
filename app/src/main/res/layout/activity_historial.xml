@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.giocni.trasnportador.Modulos.Servicios.Historial">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+            <ImageView
+                android:clickable="true"
+                android:onClick="menuPrincipal"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_gravity="end"
+                android:src="@drawable/home"
+                android:background="@drawable/efecto_pulsar"
+                android:padding="8sp"
+                android:layout_marginRight="10sp"
+                />
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.giocni.trasnportador.Modulos.Servicios.Historial"
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        >
+
+        <!--<ScrollView
+            android:fillViewport="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">-->
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@color/colorSecundario"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginRight="5sp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fecha inicial"
+                            android:textColor="#ffffff"
+                            android:layout_marginLeft="5sp"
+                            android:layout_marginTop="5sp"
+                            />
+
+                        <RelativeLayout
+                            android:layout_marginTop="0sp"
+                            android:layout_marginBottom="5sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/imgLogoUser"
+                                android:src="@drawable/fecha_ico"
+                                android:padding="8sp"
+                                android:layout_width="35sp"
+                                android:layout_height="35sp"
+                                android:background="@drawable/estilo_icon_txt"
+                                />
+
+                            <EditText
+                                android:layout_toRightOf="@id/imgLogoUser"
+                                android:id="@+id/txtFechaInicial"
+                                android:focusable="false"
+                                android:background="@drawable/estilo_txt_sin_borde"
+                                android:layout_width="match_parent"
+                                android:layout_height="35sp"
+                                android:paddingTop="5sp"
+                                android:paddingLeft="10sp"
+                                android:gravity="center_vertical"
+                                android:paddingBottom="5sp"
+                                android:maxLines="1"
+                                android:text=""
+                                android:textSize="@dimen/tam2"
+                                android:fontFamily="@string/tipoLetra"
+                                android:layout_marginLeft="-2sp"
+                                android:inputType="text"
+                                android:hint="" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginRight="10sp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fecha final"
+                            android:textColor="#ffffff"
+                            android:layout_marginLeft="5sp"
+                            android:layout_marginTop="5sp"
+                            />
+
+                        <RelativeLayout
+                            android:layout_marginTop="0sp"
+                            android:layout_marginBottom="8sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/imgLogoUser2"
+                                android:src="@drawable/fecha_ico"
+                                android:padding="8sp"
+                                android:layout_width="35sp"
+                                android:layout_height="35sp"
+                                android:background="@drawable/estilo_icon_txt"
+                                />
+
+                            <EditText
+                                android:layout_toRightOf="@id/imgLogoUser2"
+                                android:id="@+id/txtFechaFinal"
+                                android:focusable="false"
+                                android:background="@drawable/estilo_txt_sin_borde"
+                                android:layout_width="match_parent"
+                                android:layout_height="35sp"
+                                android:paddingTop="5sp"
+                                android:paddingLeft="10sp"
+                                android:gravity="center_vertical"
+                                android:paddingBottom="5sp"
+                                android:maxLines="1"
+                                android:text=""
+                                android:textSize="@dimen/tam2"
+                                android:fontFamily="@string/tipoLetra"
+                                android:layout_marginLeft="-2sp"
+                                android:inputType="text"
+                                android:hint="" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="visible"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.2"
+                        android:padding="0sp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:clickable="true"
+                            android:onClick="cargarHistorial"
+                            android:padding="10sp"
+                            android:src="@drawable/buscar_ico"
+                            android:layout_marginTop="15sp"
+                            android:layout_marginLeft="10sp"
+                            android:layout_marginRight="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="40sp"
+                            android:background="@drawable/boton_blanco"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/listaHistorial"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+       <!-- </ScrollView> -->
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/layout_menu_principal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:fillViewport="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#7f000000"
+                android:clickable="true"
+                android:onClick="menuPrincipal"
+                >
+
+                <include layout="@layout/content_menu_principal"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

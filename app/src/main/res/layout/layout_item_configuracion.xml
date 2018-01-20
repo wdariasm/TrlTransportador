@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="10sp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/lblTitulo1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Titulo"
+        android:fontFamily="@string/tipoLetra"
+        android:textSize="@dimen/tam6"
+        android:maxLines="1"
+        android:textColor="#000000"
+        />
+
+    <TextView
+        android:id="@+id/lblTitulo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-3sp"
+        android:text="Descripcion"
+        android:fontFamily="@string/tipoLetra"
+        android:textSize="@dimen/tam4"
+        android:maxLines="2"
+        />
+
+</LinearLayout>

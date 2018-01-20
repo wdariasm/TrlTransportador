@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.giocni.trasnportador">
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <permission
+        android:name="com.giocni.trasnportador.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <permission
+        android:name="com.giocni.trasnportador.android.maps.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.giocni.trasnportador.android.maps.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.giocni.trasnportador.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.REGISTER" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icono"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBkU3QO9lndvJmTPpKYLoQGKMa4oCrhYEo" />
+
+        <!-- SERVICIOS -->
+        <service android:name=".Utiles.ServicioGPS" />
+
+        <receiver
+            android:name=".Utiles.Notificaciones.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.giocni.turnapp" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".Utiles.Notificaciones.GCMNotificationIntentService" />
+
+        <activity
+            android:name=".Modulos.Inicial.Splash"
+            android:screenOrientation="portrait"
+            android:theme="@style/appThemeLogin">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Modulos.Inicial.Login"
+            android:screenOrientation="portrait"
+            android:theme="@style/appThemeLogin" />
+        <activity
+            android:name=".Modulos.Servicios.Principal"
+            android:label="@string/title_activity_principal"
+            android:theme="@style/appThemeLogin" />
+        <activity
+            android:name=".Modulos.Servicios.Historial"
+            android:label="Historial"
+            android:screenOrientation="portrait"
+            android:theme="@style/appThemeLogin" />
+        <activity
+            android:name=".Modulos.Servicios.Pagos"
+            android:label="Pagos"
+            android:screenOrientation="portrait"
+            android:theme="@style/appThemeLogin" />
+        <activity
+            android:name=".Modulos.Configuracion.Configuracion"
+            android:label="Configuración"
+            android:screenOrientation="portrait"
+            android:theme="@style/appThemeLogin" />
+        <activity
+            android:name=".Modulos.Configuracion.Perfil"
+            android:label="Perfil"
+            android:screenOrientation="portrait"
+            android:theme="@style/appThemeLogin" />
+        <activity
+            android:name=".Modulos.Inicial.RecordarPass"
+            android:screenOrientation="portrait"
+            android:theme="@style/appThemeLogin"/>
+    </application>
+
+</manifest>

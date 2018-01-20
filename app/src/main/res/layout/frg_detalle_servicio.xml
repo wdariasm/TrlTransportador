@@ -1,0 +1,731 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="com.giocni.trasnportador.Fragments.frg_detalle_servicio">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/divSelecccionar"
+            android:padding="16sp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:src="@drawable/izquiera_mano"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@string/tipoLetra"
+                android:textSize="@dimen/tam5"
+                android:gravity="center_horizontal"
+                android:textColor="#000000"
+                android:text="Debe seleccionar un servicio de la lista para ver el detalle" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/divInfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_marginBottom="60sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ScrollView
+                    android:fillViewport="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.4"
+                                android:background="#EEEDEB"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:textColor="#e17b47"
+                                    android:text="N° servicio"
+                                    />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.6"
+                                android:background="#F6F6F6"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/lblServicio"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:fontFamily="@string/tipoLetra"
+                                    android:textColor="#000000"
+                                    android:text="39"
+                                    />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#7e7e7e"
+                            />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.4"
+                                android:background="#EEEDEB"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:textColor="#e17b47"
+                                    android:text="Contrato"
+                                    />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.6"
+                                android:background="#F6F6F6"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/lblContrato"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:fontFamily="@string/tipoLetra"
+                                    android:textColor="#000000"
+                                    android:text="1600028"
+                                    />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#7e7e7e"
+                            />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.4"
+                                android:background="#EEEDEB"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:textColor="#e17b47"
+                                    android:text="Fecha servicio"
+                                    />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.6"
+                                android:background="#F6F6F6"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/lblFecha"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:fontFamily="@string/tipoLetra"
+                                    android:textColor="#000000"
+                                    android:text="2016-11-27"
+                                    />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#7e7e7e"
+                            />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.4"
+                                android:background="#EEEDEB"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:textColor="#e17b47"
+                                    android:text="Hora servicio"
+                                    />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.6"
+                                android:background="#F6F6F6"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/lblHora"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:fontFamily="@string/tipoLetra"
+                                    android:textColor="#000000"
+                                    android:text="06:00 A.M"
+                                    />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#7e7e7e"
+                            />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.4"
+                                android:background="#EEEDEB"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:textColor="#e17b47"
+                                    android:text="Responsable"
+                                    />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.6"
+                                android:background="#F6F6F6"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/lblResponsable"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:fontFamily="@string/tipoLetra"
+                                    android:textColor="#000000"
+                                    android:text="Gilmar Ocampo Nieves"
+                                    />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#7e7e7e"
+                            />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.4"
+                                android:background="#EEEDEB"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:textColor="#e17b47"
+                                    android:text="Teléfono"
+                                    />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.6"
+                                android:background="#F6F6F6"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/lblTelefono"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:fontFamily="@string/tipoLetra"
+                                    android:textColor="#000000"
+                                    android:text="3004061405"
+                                    />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#7e7e7e"
+                            />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.4"
+                                android:background="#EEEDEB"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:textColor="#e17b47"
+                                    android:text="Dirección de origen"
+                                    />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.6"
+                                android:background="#F6F6F6"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/lblDireccionOrigen"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:fontFamily="@string/tipoLetra"
+                                    android:textColor="#000000"
+                                    android:text="Carrera 6 # 18a 61"
+                                    />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#7e7e7e"
+                            />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.4"
+                                android:background="#EEEDEB"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:textColor="#e17b47"
+                                    android:text="Dirección de destino"
+                                    />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.6"
+                                android:background="#F6F6F6"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/lblDireccionDestino"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:fontFamily="@string/tipoLetra"
+                                    android:textColor="#000000"
+                                    android:text="Call 26 # 12a - 76"
+                                    />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#7e7e7e"
+                            />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.4"
+                                android:background="#EEEDEB"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:textColor="#e17b47"
+                                    android:text="N° Pasajeros"
+                                    />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.6"
+                                android:background="#F6F6F6"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/lblPasajeros"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:fontFamily="@string/tipoLetra"
+                                    android:textColor="#000000"
+                                    android:text="1"
+                                    />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#7e7e7e"
+                            />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.4"
+                                android:background="#EEEDEB"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:textColor="#e17b47"
+                                    android:text="Valor servicio"
+                                    />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.6"
+                                android:background="#F6F6F6"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/lblPrecio"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:fontFamily="@string/tipoLetra"
+                                    android:textColor="#000000"
+                                    android:text="$ 100.000"
+                                    />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#7e7e7e"
+                            />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.4"
+                                android:background="#EEEDEB"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:textColor="#e17b47"
+                                    android:text="Forma Pago"
+                                    />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="0.6"
+                                android:background="#F6F6F6"
+                                android:paddingTop="5sp"
+                                android:paddingBottom="5sp"
+                                android:paddingLeft="10sp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/lblFormaPago"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:textSize="@dimen/tam4"
+                                    android:fontFamily="@string/tipoLetra"
+                                    android:textColor="#000000"
+                                    android:text="Efectivo"
+                                    />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#7e7e7e"
+                            />
+
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="60sp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#a6a6a6"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:padding="5sp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:gravity="center_horizontal"
+                            android:layout_height="wrap_content"
+                            android:text="Estado actual"
+                            android:fontFamily="@string/tipoLetra"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/tam3"
+                            />
+
+                        <TextView
+                            android:id="@+id/lblEstado"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="Sin confirmar"
+                            android:fontFamily="@string/tipoLetra"
+                            android:textSize="@dimen/tam3"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/btnCancelar"
+                            android:clickable="true"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:background="@color/colorRojo"
+                            android:text="Cancelar"
+                            android:gravity="center"
+                            android:textSize="@dimen/tam3"
+                            android:textColor="#ffffff"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/btnConfirmar"
+                            android:clickable="true"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:background="@color/colorVerde"
+                            android:text="Confirmar"
+                            android:gravity="center"
+                            android:textSize="@dimen/tam3"
+                            android:textColor="#ffffff"
+                            android:layout_height="match_parent" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

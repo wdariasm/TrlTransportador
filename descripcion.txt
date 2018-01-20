@@ -1,0 +1,10 @@
+-> login
+-> mostrar servicios
+-> historico de servicios (finalizados en el dia)
+-> mover estados del servicio
+-> trazar ruta optima
+
+
+
+//---//
+trabajan por contratos

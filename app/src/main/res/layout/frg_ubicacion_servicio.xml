@@ -1,0 +1,102 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.giocni.trasnportador.Fragments.frg_ubicacion_servicio">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="0sp"
+            android:layout_above="@+id/divEstados"
+            class="com.giocni.trasnportador.Utiles.WorkaroundMapFragment"/>
+
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/divEstados"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="60sp">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#a6a6a6"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.4"
+                    android:padding="5sp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:gravity="center_horizontal"
+                        android:layout_height="wrap_content"
+                        android:text="Estado actual"
+                        android:fontFamily="@string/tipoLetra"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/tam3"
+                        />
+
+                    <TextView
+                        android:id="@+id/lblEstado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Sin confirmar"
+                        android:fontFamily="@string/tipoLetra"
+                        android:textSize="@dimen/tam3"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.6"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:clickable="true"
+                        android:id="@+id/btnCancelar"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:background="@color/colorRojo"
+                        android:text="Cancelar"
+                        android:gravity="center"
+                        android:textSize="@dimen/tam3"
+                        android:textColor="#ffffff"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:clickable="true"
+                        android:id="@+id/btnConfirmar"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:background="@color/colorVerde"
+                        android:text="Confirmar"
+                        android:gravity="center"
+                        android:textSize="@dimen/tam3"
+                        android:textColor="#ffffff"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

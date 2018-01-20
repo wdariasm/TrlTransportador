@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.giocni.trasnportador.Modulos.Configuracion.Configuracion">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+            <ImageView
+                android:clickable="true"
+                android:onClick="menuPrincipal"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_gravity="end"
+                android:src="@drawable/home"
+                android:background="@drawable/efecto_pulsar"
+                android:padding="8sp"
+                android:layout_marginRight="10sp"
+                />
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.giocni.trasnportador.Modulos.Configuracion.Configuracion"
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+            android:clickable="true"
+            android:onClick="irPerfil"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12sp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Perfil"
+                android:fontFamily="@string/tipoLetra"
+                android:textSize="@dimen/tam6"
+                android:maxLines="1"
+                android:textColor="#000000"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-3sp"
+                android:text="Edita tus datos personales"
+                android:fontFamily="@string/tipoLetra"
+                android:textSize="@dimen/tam3"
+                android:maxLines="2"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5sp"
+            android:background="#717171"
+            />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0sp"
+                android:padding="12sp"
+                >
+
+                <TextView
+                    android:id="@+id/lblTitulo2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cuadro de confirmación"
+                    android:fontFamily="@string/tipoLetra"
+                    android:textSize="@dimen/tam6"
+                    android:maxLines="1"
+                    android:layout_marginRight="60sp"
+                    android:textColor="#000000"
+                    />
+
+                <TextView
+                    android:layout_below="@id/lblTitulo2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@string/tipoLetra"
+                    android:textSize="@dimen/tam3"
+                    android:maxLines="2"
+                    android:layout_marginRight="60sp"
+                    android:text="Confirmar por cada acción que realices"
+                    />
+
+                <CheckBox
+                    android:layout_width="40sp"
+                    android:layout_height="45sp"
+                    android:gravity="center"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="0sp"
+                    android:id="@+id/cboxCuadroConfirm"
+                    android:onClick="clickCuadroConfirm"
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/layout_menu_principal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:fillViewport="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#7f000000"
+                android:clickable="true"
+                android:onClick="menuPrincipal"
+                >
+
+                <include layout="@layout/content_menu_principal"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
