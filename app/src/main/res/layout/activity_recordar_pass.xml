@@ -4,7 +4,7 @@
     android:id="@+id/activity_recordar_pass"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.giocni.trasnportador.Modulos.Inicial.RecordarPass">
+    tools:context="com.walasys.trasnportador.Modulos.Inicial.RecordarPass">
 
     <ScrollView
         android:fillViewport="true"

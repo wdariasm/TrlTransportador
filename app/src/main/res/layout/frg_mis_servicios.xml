@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorGrisOscuro"
-    tools:context="com.giocni.trasnportador.Fragments.frg_mis_servicios">
+    tools:context="com.walasys.trasnportador.Fragments.frg_mis_servicios">
 
     <ListView
         android:id="@+id/listaServicios"
