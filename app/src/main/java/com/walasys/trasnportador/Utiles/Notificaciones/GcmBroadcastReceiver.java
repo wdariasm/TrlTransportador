@@ -1,4 +1,4 @@
-package com.giocni.trasnportador.Utiles.Notificaciones;
+package com.walasys.trasnportador.Utiles.Notificaciones;
 
 import android.app.Activity;
 import android.content.ComponentName;
