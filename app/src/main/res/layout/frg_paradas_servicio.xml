@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
-    tools:context="com.walasys.trasnportador.Fragments.frg_paradas_servicio">
+    tools:context="com.walasys.conductor.Fragments.frg_paradas_servicio">
 
 
 

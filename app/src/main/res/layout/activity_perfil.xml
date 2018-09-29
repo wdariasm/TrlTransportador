@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.walasys.trasnportador.Modulos.Configuracion.Perfil">
+    tools:context="com.walasys.conductor.Modulos.Configuracion.Perfil">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
         android:id="@+id/activity_perfil"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.walasys.trasnportador.Modulos.Configuracion.Perfil">
+        tools:context="com.walasys.conductor.Modulos.Configuracion.Perfil">
 
         <ScrollView
             android:fillViewport="true"

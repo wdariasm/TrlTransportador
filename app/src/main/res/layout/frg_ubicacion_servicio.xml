@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.walasys.trasnportador.Fragments.frg_ubicacion_servicio">
+    tools:context="com.walasys.conductor.Fragments.frg_ubicacion_servicio">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="0sp"
             android:layout_above="@+id/divEstados"
-            class="com.walasys.trasnportador.Utiles.WorkaroundMapFragment"/>
+            class="com.walasys.conductor.Utiles.WorkaroundMapFragment"/>
 
 
         <RelativeLayout

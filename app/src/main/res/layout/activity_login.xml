@@ -4,7 +4,7 @@
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.walasys.trasnportador.Modulos.Inicial.Login">
+    tools:context="com.walasys.conductor.Modulos.Inicial.Login">
 
     <ScrollView
         android:fillViewport="true"
