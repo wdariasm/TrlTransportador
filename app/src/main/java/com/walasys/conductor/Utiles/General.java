@@ -340,14 +340,14 @@ public class General {
 
     public String cargarServidor(){
         SharedPreferences prefs = context.getSharedPreferences("tlrConductor", Context.MODE_PRIVATE);
-        //return prefs.getString("rutaServidor", "http://192.168.0.22/public/api");
-        return prefs.getString("rutaServidor", "http://app.trl.com.co/public/api");
+        return prefs.getString("rutaServidor", "http://192.168.0.22/TrlTaxi/public/api");
+        //return prefs.getString("rutaServidor", "http://app.trl.com.co/public/api");
     }
 
     public static String cargarServidor(Context context){
         SharedPreferences prefs = context.getSharedPreferences("tlrConductor", Context.MODE_PRIVATE);
-        //return prefs.getString("rutaServidor", "http://192.168.0.22/public/api");
-        return prefs.getString("rutaServidor", "http://app.trl.com.co/public/api");
+        return prefs.getString("rutaServidor", "http://192.168.0.22/TrlTaxi/public/api");
+        //return prefs.getString("rutaServidor", "http://app.trl.com.co/public/api");
     }
 
     public void guardarConfiguracion(ConfiguracionApp con){

@@ -23,6 +23,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.walasys.conductor.Fragments.frg_detalle_servicio;
 import com.walasys.conductor.Fragments.frg_mis_servicios;
 import com.walasys.conductor.Fragments.frg_paradas_servicio;
@@ -37,6 +38,8 @@ import com.walasys.conductor.Utiles.Notificaciones.MyFirebaseInstanceIDService;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import io.fabric.sdk.android.Fabric;
 
 public class Principal extends AppCompatActivity{
 
@@ -62,8 +65,10 @@ public class Principal extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
-        initComponent();
 
+        Fabric.with(this, new Crashlytics());
+
+        initComponent();
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -168,8 +173,8 @@ public class Principal extends AppCompatActivity{
             }
 
             frgDetalleServicio.objServicio = obj;
-            frgUbicacionServicio.objServicio = obj;
             frgParadasServicio.objServicio = obj;
+            frgUbicacionServicio.objServicio = obj;
             frgDetalleServicio.actualizarBtn();
             frgUbicacionServicio.actualizarBtn();
 

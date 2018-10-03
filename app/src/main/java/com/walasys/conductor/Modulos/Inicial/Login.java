@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.walasys.conductor.Modulos.Servicios.Principal;
 import com.walasys.conductor.R;
 import com.walasys.conductor.Servicios.webServicesLogin;
@@ -21,16 +22,23 @@ import com.walasys.conductor.Utiles.Modelos.Conductor;
 
 import org.json.JSONObject;
 
+import io.fabric.sdk.android.Fabric;
+
 public class Login extends AppCompatActivity {
 
     EditText txtUsuario;
     EditText txtPass;
     General gn;
 
+    private static final String TAG = "Login";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Fabric.with(this, new Crashlytics());
+
         initComponent();
         gn = new General(this,null);
 
@@ -39,7 +47,10 @@ public class Login extends AppCompatActivity {
             if(ex.getBoolean("ban")){
                 gn.cerrarSesion();
             }
-        }catch(Exception ec){}
+        }catch(Exception ex){
+            Crashlytics.log(1, TAG, "Error cargar servcios");
+            Crashlytics.logException(ex);
+        }
     }
 
     private void initComponent(){
@@ -123,6 +134,7 @@ public class Login extends AppCompatActivity {
                                     gn.guardarConductor(con);
                                     Intent i = new Intent(Login.this, Principal.class);
                                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                                    Crashlytics.setUserIdentifier(idSusuario);
                                     startActivity(i);
                                     finish();
                                 }
