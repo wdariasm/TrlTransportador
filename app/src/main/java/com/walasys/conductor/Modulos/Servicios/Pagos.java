@@ -39,6 +39,8 @@ public class Pagos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pagos);
+
+
         initComponent();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

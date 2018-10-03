@@ -8,10 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.walasys.conductor.Modulos.Servicios.Principal;
 import com.walasys.conductor.R;
 import com.walasys.conductor.Servicios.webServicesConductor;
@@ -23,7 +25,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.concurrent.locks.Condition;
+
+import io.fabric.sdk.android.Fabric;
 
 
 public class frg_mis_servicios extends Fragment {
@@ -35,12 +38,15 @@ public class frg_mis_servicios extends Fragment {
     ListView listaServicios;
     General gn;
 
+    private static final String TAG = "Mis servicios";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         if(rootView == null) {
             rootView = inflater.inflate(R.layout.frg_mis_servicios, container, false);
             mActivity = getActivity();
             gn = new General(mActivity,null);
+            Fabric.with(mActivity, new Crashlytics());
             initComponent();
 
             //lista
@@ -119,7 +125,10 @@ public class frg_mis_servicios extends Fragment {
                                 AdaptadorListaMisServicios ad = new AdaptadorListaMisServicios(mActivity,listaServiciosData);
                                 listaServicios.setAdapter(ad);
                             }
-                        }catch (Exception ex){}
+                        }catch (Exception ex){
+                            Crashlytics.log(1, TAG, "Error cargar servcios");
+                            Crashlytics.logException(ex);
+                        }
                     }
                 });
             }

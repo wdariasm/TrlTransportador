@@ -15,6 +15,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.walasys.conductor.Modulos.Servicios.Principal;
 import com.walasys.conductor.R;
 import com.walasys.conductor.Servicios.webServicesOtros;
@@ -42,6 +43,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.fabric.sdk.android.Fabric;
+
 public class frg_ubicacion_servicio extends Fragment implements OnMapReadyCallback {
 
     public TextView lblEstado;
@@ -60,6 +63,7 @@ public class frg_ubicacion_servicio extends Fragment implements OnMapReadyCallba
     Marker markerOrigen = null;
     Marker markerDestino = null;
     public JSONObject objServicio = null;
+    private static final String TAG = "Ubicación";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
@@ -68,6 +72,7 @@ public class frg_ubicacion_servicio extends Fragment implements OnMapReadyCallba
             initComponent();
             mActivity = getActivity();
             gn = new General(mActivity,null);
+            Fabric.with(mActivity, new Crashlytics());
             //eventos
             btnConfirmar.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -168,7 +173,10 @@ public class frg_ubicacion_servicio extends Fragment implements OnMapReadyCallba
                 lblEstado.setText(objServicio.getString("Estado"));
 
                 gn.determinarBotonActualizar(objServicio.getString("Estado"),btnConfirmar,btnCancelar);
-            }catch(Exception ex){}
+            }catch(Exception ex){
+                Crashlytics.log(2, TAG, "Error obtener ubicación del servicio");
+                Crashlytics.logException(ex);
+            }
         }
     }
 
@@ -179,24 +187,31 @@ public class frg_ubicacion_servicio extends Fragment implements OnMapReadyCallba
     }
 
     private void initComponent(){
-        divEstados = (RelativeLayout) rootView.findViewById(R.id.divEstados);
-        lblEstado = (TextView) rootView.findViewById(R.id.lblEstado);
-        btnConfirmar = (TextView) rootView.findViewById(R.id.btnConfirmar);
-        btnCancelar = (TextView) rootView.findViewById(R.id.btnCancelar);
+        try {
+            divEstados = (RelativeLayout) rootView.findViewById(R.id.divEstados);
+            lblEstado = (TextView) rootView.findViewById(R.id.lblEstado);
+            btnConfirmar = (TextView) rootView.findViewById(R.id.btnConfirmar);
+            btnCancelar = (TextView) rootView.findViewById(R.id.btnCancelar);
 
-        ((SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map)).getMapAsync(this);
-        ((WorkaroundMapFragment) getChildFragmentManager().findFragmentById(R.id.map)).setListener(new WorkaroundMapFragment.OnTouchListener() {
-            @Override
-            public void onTouch() {
-                //mScrollView.requestDisallowInterceptTouchEvent(true);
-            }
-        });
+            ((SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map)).getMapAsync(this);
+            ((WorkaroundMapFragment) getChildFragmentManager().findFragmentById(R.id.map)).setListener(new WorkaroundMapFragment.OnTouchListener() {
+                @Override
+                public void onTouch() {
+                    //mScrollView.requestDisallowInterceptTouchEvent(true);
+                }
+            });
+        }catch (Exception e){
+            System.out.println("error polylineas: "+e.getMessage());
+            Crashlytics.log(2, TAG, "InitComponent Ubicación servicio");
+            Crashlytics.logException(e);
+        }
     }
 
     private void getJsonRutas()
     {
         try {
             webServicesOtros ruta = new webServicesOtros(mActivity);
+
             String posOri = objServicio.getString("LatOrigen") + "," + objServicio.getString("LngOrigen");
             String posDes = objServicio.getString("LatDestino") + "," + objServicio.getString("LngDestino");
             JSONObject jsonRutas = ruta.getRuta(posOri,posDes);
@@ -208,6 +223,8 @@ public class frg_ubicacion_servicio extends Fragment implements OnMapReadyCallba
             listaPos = gn.decodePoly(polyline);
             trazarRuta();
         } catch (JSONException e) {
+            Crashlytics.log(2, TAG, "Error obtener ubicación del servicio");
+            Crashlytics.logException(e);
             System.out.println("error polylineas: "+e.getMessage());
         }
 
@@ -234,7 +251,10 @@ public class frg_ubicacion_servicio extends Fragment implements OnMapReadyCallba
             bounds.include(posDes);
             //bounds.include(ServicioGPS.location);
             mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds.build(), 100));
-        }catch (Exception ex){}
+        }catch (Exception ex){
+            Crashlytics.log(2, TAG, "Trazar Ruta");
+            Crashlytics.logException(ex);
+        }
     }
 
     private void marcarOrigenDestino(LatLng posOri,LatLng porDes){
@@ -278,7 +298,10 @@ public class frg_ubicacion_servicio extends Fragment implements OnMapReadyCallba
                             }
                         }
                     });
-                }catch (Exception e){}
+                }catch (Exception e){
+                    Crashlytics.log(2, TAG, "onMapReady");
+                    Crashlytics.logException(e);
+                }
             }
         }).start();
     }

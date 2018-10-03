@@ -36,7 +36,7 @@ public class webServicesOtros {
         {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
-            URL url = new URL("http://maps.googleapis.com/maps/api/directions/json?origin=" + puntoInicial +"&destination=" + puntoFinal + "&sensor=false");
+            URL url = new URL("https://maps.googleapis.com/maps/api/directions/json?origin=" + puntoInicial +"&destination=" + puntoFinal + "&sensor=false");
             HttpURLConnection connection = (HttpURLConnection)url.openConnection();
             connection.setRequestMethod("GET");
             connection.connect();
